@@ -767,7 +767,7 @@
   
   .product-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
     padding: 0.5rem;
     padding-top: 10px;
@@ -821,7 +821,7 @@
   .CatImageContainer {
     position: relative;
     width: 50px;
-    height:50px;
+    height:100px;
     overflow: hidden;
     border-radius: 10px; /* Optional: Adds rounded corners */
   }
