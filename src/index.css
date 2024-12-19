@@ -184,26 +184,26 @@
 }
 .Cat {
   display: flex;
-  
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  justify-content: center; /* Center the items */
   padding: 10px;
-  gap: 50px; /* Reduced gap for better alignment */
+  gap: 10px;
   margin-top: 10px;
-  margin-right: 0%;
-  margin-left: 0%;
 }
 
 .CatCard {
-  margin-right: 50px;
+  flex: 1 1 calc(25% - 20px); /* Adjust width dynamically */
+  max-width: 250px; /* Limit the maximum width */
+  margin: 10px;
 }
 
 .CatImageContainer {
   position: relative;
-  width: 120px;
-  height: 200px;
-  overflow: hidden;
-  border-radius: 10px; /* Optional: Adds rounded corners */
+  width: 100%; /* Make the container take full width */
+  height: 200px; /* Set a fixed height */
+  border-radius: 10px;
+  overflow: hidden; /* Prevent content overflow */
 }
-
 
 .CatImageContainer img {
   width: 100%;
@@ -218,10 +218,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Optional: Adds a shadow for better visibility */
-  pointer-events: none; /* Ensures the text is not clickable */
+  text-align: center;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
 }
 .divider h2{
   padding: 20px;;
@@ -629,11 +630,7 @@
     overflow-x: hidden;
     
   }
-  .Home{
-    max-width: 400px;
-    margin: auto; 
-    
-  }
+
   .Navbar{
     max-width: 600px;
     margin: auto; 
@@ -811,7 +808,19 @@
   .product-card button:hover {
     background-color: #2a5e3d;
   }
-  
+  .CatCard {
+    flex: 1 1 calc(50% - 20px); /* Adjust width for tablets */
+}
+
+.CatText {
+    font-size: 14px; /* Reduce font size for smaller screens */
+}
+
+.CatImageContainer {
+    height: 150px; /* Reduce height for smaller screens */
+}
+}
+
   .divider h2{
     padding: 20px;;
   }
