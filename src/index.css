@@ -624,9 +624,15 @@
 
 @media only screen and (max-width: 600px) {
  
+
+  *{
+    overflow-x: hidden;
+    
+  }
   .Home{
-    max-width: 1000px;
+    max-width: 400px;
     margin: auto; 
+    
   }
   .Navbar{
     max-width: 700px;
@@ -745,6 +751,7 @@
     width: 100%; /* Adjust width as needed */
     max-width: 300px; /* Limit the maximum width of the image */
     border-radius: 8px;
+    margin-bottom: 0;
   }
   
   .hero-button {
@@ -808,7 +815,7 @@
     display: flex;
     
     padding: 10px;
-    gap: 2px; /* Reduced gap for better alignment */
+    gap:10px; /* Reduced gap for better alignment */
     margin-top: 10px;
     margin-right: 0%;
     margin-left: 0%;
@@ -816,11 +823,12 @@
   
   .CatCard {
     margin-right: 50px;
+    width: 200px;
   }
   
   .CatImageContainer {
     position: relative;
-    width: 50px;
+    width: 100px;
     height:100px;
     overflow: hidden;
     border-radius: 10px; /* Optional: Adds rounded corners */
