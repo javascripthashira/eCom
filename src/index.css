@@ -827,8 +827,8 @@
   
   .CatImageContainer {
     position: relative;
-    width: 80px;
-    height: 100px;
+    width: 120px;
+    height: 200px;
     overflow: hidden;
     border-radius: 10px; /* Optional: Adds rounded corners */
   }
