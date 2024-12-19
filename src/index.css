@@ -635,7 +635,7 @@
     
   }
   .Navbar{
-    max-width: 700px;
+    max-width: 600px;
     margin: auto; 
   }
   .Header {
@@ -645,7 +645,7 @@
     position:absolute;
     display: flex;
     align-items: center;
-    padding: 15px;
+    padding: 20px;
     color: white;
     border-bottom: 1px solid rgb(58, 57, 57);
     margin: 0;
