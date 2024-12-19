@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
 import { Link, useNavigate } from 'react-router-dom';
 import { products } from '../Data/data';
 
@@ -7,9 +6,6 @@ const NavBar = ({ toggleCartSidebar }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const navigate = useNavigate();
-
-  // Media query for max-width: 600px
-  const isMobile = useMediaQuery({ query: '(max-width: 600px)' });
 
   const handleSearch = (e) => {
     const term = e.target.value;
@@ -44,79 +40,46 @@ const NavBar = ({ toggleCartSidebar }) => {
 
   return (
     <div className="Navbar">
-      <img src="logo.png" alt="Logo" className="navbar-logo" />
+      <img src="logo.png" alt="Logo" />
 
-      {isMobile ? (
-        // Mobile view: Show logo, search bar, and cart button
-        <>
-          <form className="search-container" onSubmit={handleSearchSubmit}>
-            <input
-              type="text"
-              placeholder="Search for products..."
-              className="search-bar"
-              value={searchTerm}
-              onChange={handleSearch}
-            />
-            {searchResults.length > 0 && (
-              <div className="search-results">
-                {searchResults.map((product) => (
-                  <div
-                    key={product.id}
-                    className="search-result-item"
-                    onClick={() => handleResultClick(product.id)}
-                  >
-                    <img src={`/${product.image}`} alt={product.name} />
-                    <p>{product.name}</p>
-                  </div>
-                ))}
-              </div>
-            )}
-          </form>
+      <ul>
+        <li><Link to="/">Category</Link></li>
+        <li><Link to="/deals">Deals</Link></li>
+        <li><Link to="/account">Account</Link></li>
+        <li>
           <a onClick={toggleCartSidebar} className="cart-button">
             Cart
           </a>
-        </>
-      ) : (
-        // Desktop view: Full navbar
-        <>
-          <ul>
-            <li><Link to="/">Category</Link></li>
-            <li><Link to="/deals">Deals</Link></li>
-            <li><Link to="/account">Account</Link></li>
-            <li>
-              <a onClick={toggleCartSidebar} className="cart-button">
-                Cart
-              </a>
-            </li>
-          </ul>
+        </li>
+      </ul>
 
-          <form className="search-container" onSubmit={handleSearchSubmit}>
-            <input
-              type="text"
-              placeholder="Search for products..."
-              className="search-bar"
-              value={searchTerm}
-              onChange={handleSearch}
-            />
-            {searchResults.length > 0 && (
-              <div className="search-results">
-                {searchResults.map((product) => (
-                  <div
-                    key={product.id}
-                    className="search-result-item"
-                    onClick={() => handleResultClick(product.id)}
-                  >
-                    <img src={`/${product.image}`} alt={product.name} />
-                    <p>{product.name}</p>
-                  </div>
-                ))}
+      {/* Search form */}
+      <form className="search-container" onSubmit={handleSearchSubmit}>
+        <input
+          type="text"
+          placeholder="Search for products..."
+          className="search-bar"
+          value={searchTerm}
+          onChange={handleSearch}
+        />
+        {searchResults.length > 0 && (
+          <div className="search-results">
+            {searchResults.map((product) => (
+              <div
+                key={product.id}
+                className="search-result-item"
+                onClick={() => handleResultClick(product.id)}
+              >
+                <img src={`/${product.image}`} alt={product.name} />
+                <p>{product.name}</p>
               </div>
-            )}
-          </form>
-        </>
-      )}
+            ))}
+          </div>
+        )}
+      </form>
     </div>
   );
+  
 };
 
 export default NavBar;
