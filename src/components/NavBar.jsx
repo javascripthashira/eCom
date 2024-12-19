@@ -79,7 +79,6 @@ const NavBar = ({ toggleCartSidebar }) => {
       </form>
     </div>
   );
-  
 };
 
 export default NavBar;
